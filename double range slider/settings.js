@@ -8,7 +8,7 @@ const sliderOne = document.querySelector("#slider-1"),
     sliderTwo = document.querySelector("#slider-2"),
     displayValOne = document.querySelector(".range1"),
     displayValTwo = document.querySelector(".range2"),
-    minGap = 5,
+    minGap = 0,
     sliderMaxValue = document.querySelector("#slider-1").max,
     sliderTrack = document.querySelector(".slider-track");
 
