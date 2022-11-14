@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F6F6C9;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #BAD1C2;
+    border: 1px solid #BAD1C2;
+    width: 50vmin;
+}
+
+.values {
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    width: 32%;
+    color: #fff;
+    background-color: #4FA095;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 15px 10px 0 10px;
+        border-color: #4FA095 transparent transparent transparent;
+    }
+}
+
+.container {
+    min-height: 100px;
+    width: 100%;
+    position: relative;
+}
+
+input[type=range] {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    appearance: none;
+    background-color: transparent;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+
+    &::-webkit-slider-runnable-track {
+        height: 5px;
+        appearance: none;
+    }
+
+    &::-moz-range-track {
+        appearance: none;
+        height: 5px;
+    }
+
+    &::-ms-track {
+        appearance: none;
+        height: 5px;
+    }
+
+    &::-webkit-slider-thumb {
+        appearance: none;
+        height: 1.7em;
+        width: 1.7em;
+        background-color: #4FA095;
+        border-radius: 50%;
+        cursor: pointer;
+        pointer-events: auto;
+        margin-top: -8px;
+
+    }
+}
+
+.slider-track {
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
