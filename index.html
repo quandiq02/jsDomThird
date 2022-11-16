@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 300px;
+            height: 200px;
+            padding: 30px;
+            border: 1px solid grey;
+        }
+
+        .select-list {
+            width: 100%;
+            height: 30px;
+            padding: 2px;
+        }
+
+        .list {
+            width: 100%;
+            margin: 5px 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .item {
+            padding: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <div class="wrapper">
+        <div class="container">
+            <select class="select-list">
+                <option value="all">Select all</option>
+                <option value="one" class="list-option">one</option>
+                <option value="two" class="list-option">two</option>
+            </select>
+
+            <ul class="list">
+                <li class="item item-one">one</li>
+                <li class="item item-two">two</li>
+                <li class="item item-one">one</li>
+                <li class="item item-two">two</li>
+                <li class="item item-one">one</li>
+                <li class="item item-two">two</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const select = document.querySelector('.select-list'),
+            one = document.querySelectorAll('.item-one'),
+            two = document.querySelectorAll('.item-two');
+
+        select.addEventListener('input', function () {
+            if (this.value === 'one') {
+                one.forEach(elem => elem.classList.remove('hidden'));
+                two.forEach(elem => elem.classList.add('hidden'));
+            } else if (this.value === 'two') {
+                one.forEach(elem => elem.classList.add('hidden'));
+                two.forEach(elem => elem.classList.remove('hidden'));
+            } else if (this.value = 'all') {
+                one.forEach(elem => elem.classList.remove('hidden'));
+                two.forEach(elem => elem.classList.remove('hidden'));
+            }
+        });
+    </script>
+</body>
+
+</html>
