@@ -1,0 +1,940 @@
+@charset "UTF-8";
+body,
+html {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  background-color: #F6F6C9;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  width: 500px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #BAD1C2;
+  padding: 30px;
+  position: relative;
+}
+
+input[type=range] {
+  width: 80%;
+}
+
+.emoticon {
+  -ms-flex-preferred-size: 85px;
+      flex-basis: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background-color: #ffeb3b;
+}
+
+.emoticon + .emoticon {
+  margin-left: 10px;
+}
+
+.emoticon-1 {
+  position: relative;
+}
+.emoticon-1 .eye-l {
+  position: absolute;
+  left: 20%;
+  top: 25%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: black;
+}
+.emoticon-1 .eye-l::after {
+  content: "";
+  position: absolute;
+  right: 55%;
+  bottom: 80%;
+  width: inherit;
+  height: 10px;
+  rotate: -45deg;
+  background-color: #ffeb3b;
+}
+.emoticon-1 .eye-l::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  right: 55%;
+  bottom: -10px;
+  z-index: 2;
+  width: 10px;
+  height: 10px;
+  border-radius: 0px 50% 50% 50%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background-color: teal;
+}
+.emoticon-1 .eye-r {
+  position: absolute;
+  right: 20%;
+  top: 25%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: black;
+}
+.emoticon-1 .eye-r::after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  bottom: 80%;
+  width: inherit;
+  height: 10px;
+  rotate: 45deg;
+  background-color: #ffeb3b;
+}
+.emoticon-1 .eye-r::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  left: 55%;
+  bottom: -10px;
+  z-index: 2;
+  width: 10px;
+  height: 10px;
+  border-radius: 0px 50% 50% 50%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background-color: teal;
+}
+.emoticon-1 .mouse {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 40px;
+  height: 30px;
+  border-radius: 49% 51% 49% 51%/50% 46% 54% 50%;
+  background-color: rgb(0, 0, 0);
+}
+.emoticon-1 .mouse::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  width: inherit;
+  height: inherit;
+  border-radius: 49% 51% 49% 51%/50% 46% 54% 50%;
+  background-color: #ffeb3b;
+}
+
+.anim-1 {
+  -webkit-animation-name: firstBlockAnim;
+          animation-name: firstBlockAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-1::after {
+  -webkit-animation-name: firstBlockShadow;
+          animation-name: firstBlockShadow;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-1 .mouse {
+  -webkit-animation-name: firstMouseAnim;
+          animation-name: firstMouseAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.anim-1 .eye-r::after {
+  -webkit-animation-name: firstEyeRAnim;
+          animation-name: firstEyeRAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-1 .eye-l::after {
+  -webkit-animation-name: firstEyeLAnim;
+          animation-name: firstEyeLAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-1 .eye-r::before {
+  -webkit-animation-name: r-teardrop;
+          animation-name: r-teardrop;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-1 .eye-l::before {
+  -webkit-animation-name: l-teardrop;
+          animation-name: l-teardrop;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+@-webkit-keyframes firstBlockAnim {
+  50% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes firstBlockAnim {
+  50% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes firstBlockShadow {
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes firstBlockShadow {
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes firstMouseAnim {
+  50% {
+    width: 30px;
+  }
+  to {
+    width: 40px;
+  }
+}
+@keyframes firstMouseAnim {
+  50% {
+    width: 30px;
+  }
+  to {
+    width: 40px;
+  }
+}
+@-webkit-keyframes firstEyeRAnim {
+  50% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes firstEyeRAnim {
+  50% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes firstEyeLAnim {
+  50% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes firstEyeLAnim {
+  50% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes r-teardrop {
+  from {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    opacity: 0;
+  }
+}
+@keyframes r-teardrop {
+  from {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes l-teardrop {
+  from {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    opacity: 0;
+  }
+}
+@keyframes l-teardrop {
+  from {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    opacity: 0;
+  }
+}
+
+.emoticon-2 {
+  position: relative;
+}
+.emoticon-2 .eye-l {
+  position: absolute;
+  left: 20%;
+  top: 25%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: black;
+}
+.emoticon-2 .eye-r {
+  position: absolute;
+  right: 20%;
+  top: 25%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: black;
+}
+.emoticon-2 .mouse {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background-color: rgb(0, 0, 0);
+}
+
+.anim-2 {
+  -webkit-animation-name: secondBlockAnim;
+          animation-name: secondBlockAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-2 .mouse {
+  -webkit-animation-name: secondMouseAnim;
+          animation-name: secondMouseAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-2 .eye-l {
+  -webkit-animation-name: secondEyeLAnim;
+          animation-name: secondEyeLAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.anim-2 .eye-r {
+  -webkit-animation-name: secondEyeRAnim;
+          animation-name: secondEyeRAnim;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+@-webkit-keyframes secondBlockAnim {
+  50% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes secondBlockAnim {
+  50% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes secondMouseAnim {
+  25% {
+    width: 40px;
+  }
+  50% {
+    width: 30px;
+  }
+}
+@keyframes secondMouseAnim {
+  25% {
+    width: 40px;
+  }
+  50% {
+    width: 30px;
+  }
+}
+@-webkit-keyframes secondEyeLAnim {
+  from {
+    border-radius: 0;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    border-radius: 49% 51% 49% 51%/50% 46% 54% 50%;
+  }
+}
+@keyframes secondEyeLAnim {
+  from {
+    border-radius: 0;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    border-radius: 49% 51% 49% 51%/50% 46% 54% 50%;
+  }
+}
+@-webkit-keyframes secondEyeRAnim {
+  from {
+    border-radius: 0;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    border-radius: 49% 51% 49% 51%/50% 46% 54% 50%;
+  }
+}
+@keyframes secondEyeRAnim {
+  from {
+    border-radius: 0;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    border-radius: 49% 51% 49% 51%/50% 46% 54% 50%;
+  }
+}
+
+.emoticon-3 {
+  position: relative;
+}
+.emoticon-3 .eye-l {
+  position: absolute;
+  left: 20%;
+  top: 25%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: black;
+}
+.emoticon-3 .eye-l::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  bottom: -100%;
+  width: 13px;
+  height: 13px;
+  z-index: 2;
+  background-color: #ffeb3b;
+  border-radius: 50%;
+}
+.emoticon-3 .eye-r {
+  position: absolute;
+  right: 20%;
+  top: 25%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: black;
+}
+.emoticon-3 .eye-r::after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  bottom: -100%;
+  width: 13px;
+  height: 13px;
+  z-index: 2;
+  background-color: #ffeb3b;
+  border-radius: 50%;
+}
+.emoticon-3 .mouse {
+  position: absolute;
+  bottom: 17%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 35px;
+  height: 30px;
+  border-radius: 49% 51% 49% 51%/50% 46% 54% 50%;
+  background-color: rgb(0, 0, 0);
+}
+.emoticon-3 .mouse::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  width: inherit;
+  height: inherit;
+  border-radius: 49% 51% 49% 51%/50% 46% 54% 50%;
+  background-color: #ffeb3b;
+}
+
+.anim-3 {
+  -webkit-animation-name: thirdBlockAnim;
+          animation-name: thirdBlockAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-3 .mouse {
+  -webkit-animation-name: thirdMouseAnim;
+          animation-name: thirdMouseAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.anim-3 .eye-r::after {
+  -webkit-animation-name: thirdEyeRAnim;
+          animation-name: thirdEyeRAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-3 .eye-l::after {
+  -webkit-animation-name: thirdEyeLAnim;
+          animation-name: thirdEyeLAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+@-webkit-keyframes thirdBlockAnim {
+  50% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes thirdBlockAnim {
+  50% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes thirdMouseAnim {
+  40% {
+    width: 40px;
+  }
+  70% {
+    width: 40px;
+  }
+  to {
+    width: 30px;
+  }
+}
+@keyframes thirdMouseAnim {
+  40% {
+    width: 40px;
+  }
+  70% {
+    width: 40px;
+  }
+  to {
+    width: 30px;
+  }
+}
+@-webkit-keyframes thirdEyeRAnim {
+  50% {
+    bottom: -50%;
+  }
+  to {
+    bottom: -100%;
+  }
+}
+@keyframes thirdEyeRAnim {
+  50% {
+    bottom: -50%;
+  }
+  to {
+    bottom: -100%;
+  }
+}
+@-webkit-keyframes thirdEyeLAnim {
+  50% {
+    bottom: -50%;
+  }
+  to {
+    bottom: -100%;
+  }
+}
+@keyframes thirdEyeLAnim {
+  50% {
+    bottom: -50%;
+  }
+  to {
+    bottom: -100%;
+  }
+}
+
+.emoticon-4 {
+  position: relative;
+}
+.emoticon-4 .eye-l {
+  position: absolute;
+  left: 20%;
+  top: 25%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: black;
+}
+.emoticon-4 .eye-l::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: -100%;
+  width: inherit;
+  height: inherit;
+  z-index: 2;
+  background-color: #ffeb3b;
+  border-radius: 50%;
+}
+.emoticon-4 .eye-r {
+  position: absolute;
+  right: 20%;
+  top: 25%;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: black;
+}
+.emoticon-4 .eye-r::after {
+  content: "";
+  position: absolute;
+  right: 0%;
+  bottom: -100%;
+  width: inherit;
+  height: inherit;
+  z-index: 2;
+  background-color: #ffeb3b;
+  border-radius: 50%;
+}
+.emoticon-4 .mouse {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  border-radius: 53% 47% 51% 49%/0% 0% 100% 100%;
+  background-color: #fff;
+}
+
+.anim-4 {
+  -webkit-animation-name: ForthBlockAnim;
+          animation-name: ForthBlockAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-4 .mouse {
+  -webkit-animation-name: ForthMouseAnim;
+          animation-name: ForthMouseAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.anim-4 .eye-r::after {
+  -webkit-animation-name: ForthEyeRAnim;
+          animation-name: ForthEyeRAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-4 .eye-l::after {
+  -webkit-animation-name: ForthEyeLAnim;
+          animation-name: ForthEyeLAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+@-webkit-keyframes ForthBlockAnim {
+  50% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes ForthBlockAnim {
+  50% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes ForthMouseAnim {
+  50% {
+    width: 55px;
+    height: 30px;
+  }
+  to {
+    width: 40px;
+    height: 20px;
+  }
+}
+@keyframes ForthMouseAnim {
+  50% {
+    width: 55px;
+    height: 30px;
+  }
+  to {
+    width: 40px;
+    height: 20px;
+  }
+}
+@-webkit-keyframes ForthEyeRAnim {
+  50% {
+    bottom: -30%;
+  }
+  to {
+    bottom: -100%;
+  }
+}
+@keyframes ForthEyeRAnim {
+  50% {
+    bottom: -30%;
+  }
+  to {
+    bottom: -100%;
+  }
+}
+@-webkit-keyframes ForthEyeLAnim {
+  50% {
+    bottom: -30%;
+  }
+  to {
+    bottom: -100%;
+  }
+}
+@keyframes ForthEyeLAnim {
+  50% {
+    bottom: -30%;
+  }
+  to {
+    bottom: -100%;
+  }
+}
+
+.emoticon-5 {
+  position: relative;
+}
+.emoticon-5 .eye-l {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 24px;
+  /* pathのサイズ */
+  height: 24px;
+  /* pathのサイズ */
+  background: rgb(185, 28, 28);
+  /* 色 */
+  -webkit-clip-path: path("M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z");
+          clip-path: path("M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z");
+}
+.emoticon-5 .eye-r {
+  position: absolute;
+  right: 20%;
+  top: 20%;
+  width: 24px;
+  /* pathのサイズ */
+  height: 24px;
+  /* pathのサイズ */
+  background: rgb(185, 28, 28);
+  /* 色 */
+  -webkit-clip-path: path("M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z");
+          clip-path: path("M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z");
+}
+.emoticon-5 .mouse {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  border-radius: 53% 47% 51% 49%/0% 0% 100% 100%;
+  background-color: #fff;
+}
+
+.anim-5 {
+  -webkit-animation-name: fifthBlockAnim;
+          animation-name: fifthBlockAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-5 .mouse {
+  -webkit-animation-name: fifthMouseAnim;
+          animation-name: fifthMouseAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.anim-5 .eye-r {
+  -webkit-animation-name: fifthEyeRAnim;
+          animation-name: fifthEyeRAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+.anim-5 .eye-l {
+  -webkit-animation-name: fifthEyeLAnim;
+          animation-name: fifthEyeLAnim;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+@-webkit-keyframes fifthBlockAnim {
+  50% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fifthBlockAnim {
+  50% {
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes fifthMouseAnim {
+  50% {
+    width: 55px;
+  }
+  to {
+    width: 40px;
+  }
+}
+@keyframes fifthMouseAnim {
+  50% {
+    width: 55px;
+  }
+  to {
+    width: 40px;
+  }
+}
+@-webkit-keyframes fifthEyeRAnim {
+  50% {
+    -webkit-transform: scale(1.2) rotate(-10deg);
+            transform: scale(1.2) rotate(-10deg);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes fifthEyeRAnim {
+  50% {
+    -webkit-transform: scale(1.2) rotate(-10deg);
+            transform: scale(1.2) rotate(-10deg);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes fifthEyeLAnim {
+  50% {
+    -webkit-transform: scale(1.2) rotate(10deg);
+            transform: scale(1.2) rotate(10deg);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes fifthEyeLAnim {
+  50% {
+    -webkit-transform: scale(1.2) rotate(10deg);
+            transform: scale(1.2) rotate(10deg);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}/*# sourceMappingURL=style.css.map */
