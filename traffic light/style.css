@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #6D67E4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+h1 {
+    margin: 0 auto;
+    font-family: 'Poppins',sans-serif;
+    color: #F2F7A1;
+}
+
+.wrapper {
+    align-self: flex-start;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container {
+    background: rgb(55, 55, 55);
+    padding: 10px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+input{
+    outline: none;
+    border: none;
+    text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:focus,input:hover{
+    outline: none;
+    border: none;
+}
+.light {
+    background-color: white;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container>div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+
+.light+.light {
+    margin-top: 10px;
+}
+
+input {
+    width: 200px;
+    height: 40px;
+}
+
+input+input {
+    margin-top: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+    height: 40px;
+    width: 200px;
+    background-color: rgb(107, 219, 193);
+    border-radius: 20px;
+    border: none;
+}
